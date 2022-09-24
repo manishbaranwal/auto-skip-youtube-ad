@@ -1,0 +1,23 @@
+{
+  "name": "Auto Skip Youtube Ad",
+  "description": "Auto skip youtube ad !",
+  "version": "1.0",
+  "manifest_version": 3,
+  "author": "manish baranwal",
+  "icons": {
+    "20": "./icon.png",
+    "32": "./icon.png",
+    "48": "./icon.png",
+    "128": "./icon.png"
+  },
+  "content_scripts": [
+    {
+      "matches": [
+        "*://youtube.com/*",
+        "*://www.youtube.com/*",
+        "*://m.youtube.com/*"
+      ],
+      "js": ["./background.js"]
+    }
+  ]
+}
