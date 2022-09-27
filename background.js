@@ -1,12 +1,22 @@
 console.log("Started youtube ad auto skip");
 
-let adCount = 0;
+let adVideoCount = 0;
+let adOverlayCount = 0;
 const skipAd = () => {
-  const btns = document.getElementsByClassName("ytp-ad-skip-button");
-  if (btns && btns.length) {
-    adCount += 1;
-    console.log(`${adCount} ad skipped`);
-    btns[0].click();
+  const adSkipButtons = document.getElementsByClassName("ytp-ad-skip-button");
+  if (adSkipButtons && adSkipButtons.length) {
+    adSkipButtons[0].click();
+    adVideoCount += 1;
+    console.log(`${adVideoCount} ad video skipped`);
+  }
+
+  const adOverlayButtons = document.getElementsByClassName(
+    "ytp-ad-overlay-close-button"
+  );
+  if (adOverlayButtons && adOverlayButtons.length) {
+    adOverlayButtons[0].click();
+    adOverlayCount += 1;
+    console.log(`${adOverlayCount} ad overlay skipped`);
   }
 };
 
